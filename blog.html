@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment05</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/56e3a77e4a.js" crossorigin="anonymous"></script>
+
+  <!-- tailwind cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+
+</head>
+
+<body>
+  <!-- Navbar Section starts from here -->
+  <div class="grid grid-cols-3 p-9 bg-[#F9F7F3] mb-8">
+    <div class="mx-auto">
+      <button id="homeBtn" class="btn bg-[#B4F461]  rounded-xl w-24 h-11 text-lg font-bold text-[#111111]">Home</button>
+    </div>
+    <div class="flex items-center space-x-3 mx-auto ">
+      <img class="w-12 h-12" src="resources/assets/logo.png" alt="logo">
+      <h2 class="hidden md:block text-lg font-bold text-[#111111]">Donate Bangladesh</h2>
+    </div>
+    <div class="flex items-center space-x-3 mx-auto">
+      <img class="h-7 w-7" src="resources/assets/coin.png" alt="coin">
+      <p id="balance" class="text-lg font-medium text-[#111111]">5500</p>
+      <p class="text-lg font-medium text-[#111111]">BDT</p>
+    </div>
+  </div>
+
+  <!-- Navbar Section ends from here -->
+
+  <section class="w-11/12 mx-auto">
+    <h1 class="text-2xl lg:text-4xl font-bold">Important FAQ <i class="fa-regular fa-circle-question"></i></h1>
+
+    <div class="mt-12 collapse bg-base-200">
+      <input type="checkbox" />
+      <div class="collapse-title text-2xl font-semibold py-6 pl-9">What is the DOM?</div>
+      <div class="collapse-content text-gray-500">
+        <p class="pl-4">DOM stands for Document Object Model, which allows JavaScript to interact with and modify a
+          webpage's content and structure.</p>
+      </div>
+    </div>
+    <div class="mt-2 collapse bg-base-200">
+      <input type="checkbox" />
+      <div class="collapse-title text-2xl font-semibold py-6 pl-9">How do you find an element by its ID?</div>
+      <div class="collapse-content ">
+        <p class="pl-4 text-gray-500">You can use document.getElementById('id') to select an element by its ID.</p>
+      </div>
+    </div>
+    <div class="mt-2 collapse bg-base-200">
+      <input type="checkbox" />
+      <div class="collapse-title text-2xl font-semibold py-6 pl-9">How can you change the text of an element?</div>
+      <div class="collapse-content ">
+        <p class="pl-4 text-gray-500">You can use element.textContent = "New Text"; to change the text inside an
+          element.</p>
+      </div>
+    </div>
+    <div class="mt-2 collapse bg-base-200">
+      <input type="checkbox" />
+      <div class="collapse-title text-2xl font-semibold py-6 pl-9">How do you add a CSS class to an element?</div>
+      <div class="collapse-content ">
+        <p class="pl-4 text-gray-500"> Use element.classList.add('newClass') to add a class to an element.</p>
+      </div>
+    </div>
+    <div class="mt-2 collapse bg-base-200">
+      <input type="checkbox" />
+      <div class="collapse-title text-2xl font-semibold py-6 pl-9">How can you listen for a button click?</div>
+      <div class="collapse-content ">
+        <p class="pl-4 text-gray-500">You can use element.addEventListener('click', function() { }) to run code when a
+          button is clicked.</p>
+      </div>
+    </div>
+  </section>
+  <script>
+    const homeBtn = document.getElementById('homeBtn')
+    homeBtn.addEventListener('click', function (event) {
+      window.location.href = './index.html'
+    })
+  </script>
+  <script src="script/donate.js"></script>
+</body>
+
+</html>

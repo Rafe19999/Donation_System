@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Assignent-5</title>
+</head>
+
+<body>
+  <header class="sticky top-0">
+
+    <!-- Navbar Section starts from here -->
+    <div class="grid grid-cols-3 p-9 bg-[#F9F7F3]">
+      <div class="mx-auto">
+        <button id="blogBtn" class="btn bg-[#B4F461]  rounded-xl w-24 h-11 text-lg font-bold text-[#111111]">Blog</button>
+      </div>
+      <div class="flex items-center space-x-3 mx-auto ">
+        <img class="w-12 h-12" src="resources/assets/logo.png" alt="logo">
+        <h2 class="hidden md:block text-lg font-bold text-[#111111]">Donate Bangladesh</h2>
+      </div>
+      <div class="flex items-center space-x-3 mx-auto">
+        <img class="h-7 w-7" src="resources/assets/coin.png" alt="coin">
+        <p id="balance" class="text-lg font-medium text-[#111111]">5500</p>
+        <p class="text-lg font-medium text-[#111111]">BDT</p>
+      </div>
+    </div>
+
+    <!-- Navbar Section ends from here -->
+
+    <!-- Button Section starts from here -->
+
+    <div class="flex gap-8 justify-center lg:pt-20 md:pt-11 pt-9 backdrop-blur-xl bg-white/30 p-5 rounded-xl">
+      <button id="donationMenu" class="btn rounded-xl lg:text-3xl px-9 lg:px-14  lg:pb-12 lg:pt-2 bg-[#B4F461]">Donation</button>
+      <button id="historyMenu" class="btn rounded-xl lg:text-3xl px-9 lg:px-14  lg:pb-12 lg:pt-2 bg-white">History</button>
+    </div>
+
+
+
+    <!-- Button Section ends from here -->
+
+  </header>
+  <main class="max-w-screen-xl mx-auto">
+
+    <!-- Body Section Starts from here -->
+
+    <section id="donationSection" class="">
+
+      <!-- section - 1 starts from here -->
+
+      <div class="border-2 border-solid rounded-xl border-gray-300 mt-8 p-5">
+        <div class="grid lg:grid-cols-2 gap-4">
+          <!-- Left content here -->
+          <div>
+            <img class="w-full h-auto lg:w-[522px] lg:h-[389px] rounded-xl" src="resources/assets/noakhali.png"
+              alt="flood images">
+          </div>
+
+          <!-- Right content here -->
+          <div>
+            <!-- Coin section -->
+            <div class="bg-gray-200 rounded-xl w-28 h-11 flex flex-row justify-center items-center space-x-2">
+              <img src="resources/assets/coin.png" alt="coin" class="h-6 w-6"> <!-- Adjust image size -->
+              <p id="noakhaliBalance" class="font-medium text-[#111111]">0</p>
+              <p class="font-medium text-[#111111]">BDT</p>
+            </div>
+
+            <!-- Title and text section here -->
+            <div class="space-y-3 mt-4">
+              <h3 class="font-bold text-xl text-[#111111]">Donate for Flood at Noakhali, Bangladesh</h3>
+              <p class="text-gray-500">The recent floods in Noakhali have caused significant damage to homes and
+                infrastructure. Your donation will help provide essential supplies to those affected by this disaster.
+                Every contribution, big or small, makes a difference. Please join us in supporting the relief efforts
+                and making a positive impact on the lives of those in need.</p>
+
+              <!-- Donation input and button -->
+              <textarea id="inputField-1" class="w-full h-[56px] border border-gray-300 rounded-xl p-3"
+                placeholder="Write Donation Amount"></textarea>
+
+              <button id="donate-1" class="w-full h-[56px] bg-[#B4F461] rounded-xl font-bold text-xl text-[#111111]">
+                Donate Now
+              </button>
+
+              <!-- Success Modal -->
+              <dialog id="my_modal_1" class="modal flex items-center justify-center min-h-screen">
+                <div
+                  class="modal-box flex flex-col justify-center items-center space-y-3 border-2 border-solid border-transparent p-9 md:w-[522px] rounded-xl">
+                  <h1 class="text-3xl font-bold">Congrats!</h1>
+                  <img src="resources/assets/coin.png" alt="coin">
+                  <p class="pt-5 font-semibold text-gray-400 text-lg">You have donated <span id="donationAmount"
+                      class="font-bold text-green-500"></span>
+                    for Flood at Noakhali</p>
+                  <p id="updatedBalance" class="text-xl text-blue-500"></p>
+                  <p id="noakhaliNewBalance" class="text-xl text-blue-500"></p>
+                  <h2 class="text-xl font-bold">Successfully</h2>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button in form, it will close the modal -->
+                      <button class="btn btn-xs sm:btn-sm md:btn-md bg-gray-200 font-semibold">Close
+                        Confirmation</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+
+              <!-- Error Modal -->
+              <dialog id="error_modal" class="modal flex items-center justify-center min-h-screen">
+                <div
+                  class="modal-box flex flex-col justify-center items-center space-y-3 border-2 border-solid border-transparent p-9 md:w-[422px] rounded-xl bg-white">
+                  <h1 class="text-2xl font-bold text-red-600">Error!</h1>
+                  <p id="errorMessage" class="text-xl text-red-500"></p>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button in form, it will close the modal -->
+                      <button class="btn btn-xs sm:btn-sm md:btn-md bg-gray-200 font-semibold">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- section - 1 endss from here -->
+
+
+      <!-- section - 2 starts from here -->
+
+      <div class="border-2 border-solid rounded-xl border-gray-300 mt-8 p-5">
+        <div class="grid lg:grid-cols-2 gap-4">
+          <!-- Left content here -->
+          <div>
+            <img class="w-full h-auto lg:w-[522px] lg:h-[389px] rounded-xl" src="resources/assets/feni.png"
+              alt="flood images">
+          </div>
+
+          <!-- Right content here -->
+          <div>
+            <!-- Coin section -->
+            <div class="bg-gray-200 rounded-xl w-28 h-11 flex flex-row justify-center items-center space-x-2">
+              <img src="resources/assets/coin.png" alt="coin" class="h-6 w-6"> <!-- Adjust image size -->
+              <p id="feniBalance" class="font-medium text-[#111111]">600</p>
+              <p class="font-medium text-[#111111]">BDT</p>
+            </div>
+
+            <!-- Title and text section here -->
+            <div class="space-y-3 mt-4">
+              <h3 class="font-bold text-xl text-[#111111]">Donate for Flood Relief in Feni,Bangladesh</h3>
+              <p class="text-gray-500">The recent floods in Feni have devastated local communities, leading to severe
+                disruption and loss. Your generous donation will help provide immediate aid, including food, clean
+                water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support
+                and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a
+                real difference. Please consider donating today to assist those in urgent need.</p>
+
+              <!-- Donation input and button -->
+              <textarea id="inputField-2" class="w-full h-[56px] border border-gray-300 rounded-xl p-3"
+                placeholder="Write Donation Amount"></textarea>
+              <button id="donate-2"
+                class="w-full h-[56px] bg-[#B4F461] rounded-xl font-bold text-xl text-[#111111]">Donate Now</button>
+
+              <!-- Success Modal for Section 2 -->
+              <dialog id="my_modal_2" class="modal flex items-center justify-center min-h-screen">
+                <div
+                  class="modal-box flex flex-col justify-center items-center space-y-3 border-2 border-solid border-transparent p-9 md:w-[522px] rounded-xl">
+                  <h1 class="text-3xl font-bold">Congrats!</h1>
+                  <img src="resources/assets/coin.png" alt="coin">
+                  <p class="pt-5 font-semibold text-gray-400 text-lg">You have donated <span id="donationAmount2"
+                      class="font-bold text-green-500"></span>
+                    for Flood Relief in Feni</p>
+                  <p id="updatedBalance2" class="text-xl text-blue-500"></p>
+                  <p id="feniNewBalance" class="text-xl text-blue-500"></p>
+                  <h2 class="text-xl font-bold">Successfully</h2>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button in form, it will close the modal -->
+                      <button class="btn btn-xs sm:btn-sm md:btn-md bg-gray-200 font-semibold">Close
+                        Confirmation</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+
+              <!-- Error Modal for Section 2 -->
+              <dialog id="error_modal_2" class="modal flex items-center justify-center min-h-screen">
+                <div
+                  class="modal-box flex flex-col justify-center items-center space-y-3 border-2 border-solid border-transparent p-9 md:w-[422px] rounded-xl bg-white">
+                  <h1 class="text-2xl font-bold text-red-600">Error!</h1>
+                  <p id="errorMessage2" class="text-xl text-red-500"></p>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button in form, it will close the modal -->
+                      <button class="btn btn-xs sm:btn-sm md:btn-md bg-gray-200 font-semibold">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- section - 2 endss from here -->
+
+
+      <!-- section - 3 starts from here -->
+
+      <div class="border-2 border-solid rounded-xl border-gray-300 mt-8 p-5 mb-20">
+        <div class="grid lg:grid-cols-2 gap-4">
+          <!-- Left content here -->
+          <div>
+            <img class="w-full h-auto lg:w-[522px] lg:h-[389px] rounded-xl" src="resources/assets/quota-protest.png"
+              alt="flood images">
+          </div>
+
+          <!-- Right content here -->
+          <div>
+            <!-- Coin section -->
+            <div class="bg-gray-200 rounded-xl w-28 h-11 flex flex-row justify-center items-center space-x-2">
+              <img src="resources/assets/coin.png" alt="coin" class="h-6 w-6"> <!-- Adjust image size -->
+              <p id="protestBalance" class="font-medium text-[#111111]">2400</p>
+              <p class="font-medium text-[#111111]">BDT</p>
+            </div>
+
+            <!-- Title and text section here -->
+            <div class="space-y-3 mt-4">
+              <h3 class="font-bold text-xl text-[#111111]">Aid for Injured in the Quota Movement</h3>
+              <p class="text-gray-500">The recent Quota movement has resulted in numerous injuries and significant
+                hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation,
+                and necessary supplies to those affected. By contributing, you help ensure that injured individuals
+                receive the care and support they need during this challenging time. Every donation plays a vital role
+                in alleviating their suffering and aiding in their recovery. Please consider making a donation to
+                support these brave individuals in their time of need.</p>
+
+              <!-- Donation input and button -->
+              <textarea id="inputField-3" class="w-full h-[56px] border border-gray-300 rounded-xl p-3"
+                placeholder="Write Donation Amount"></textarea>
+              <button id="donate-3"
+                class="w-full h-[56px] bg-[#B4F461] rounded-xl font-bold text-xl text-[#111111]">Donate Now</button>
+
+                <!-- success modal -->
+                <dialog id="my_modal_3" class="modal flex items-center justify-center min-h-screen">
+                  <div class="modal-box flex flex-col justify-center items-center space-y-3 border-2 border-solid border-transparent p-9 md:w-[522px] rounded-xl">
+                    <h1 class="text-3xl font-bold">Congrats!</h1>
+                    <img src="resources/assets/coin.png" alt="coin">
+                    <p class="pt-5 font-semibold text-gray-400 text-lg">You have donated <span id="donationAmount3"
+                        class="font-bold text-green-500"></span> for Quote Movement</p>
+                    <p id="updatedBalance3" class="text-xl text-blue-500"></p>
+                    <p id="protestNewBalance" class="text-xl text-blue-500"></p>
+                    <h2 class="text-xl font-bold">Successfully</h2>
+                    <div class="modal-action">
+                      <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn btn-xs sm:btn-sm md:btn-md bg-gray-200 font-semibold">Close Confirmation</button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
+
+                <!-- error modal -->
+                <dialog id="error_modal_3" class="modal flex items-center justify-center min-h-screen">
+                  <div class="modal-box flex flex-col justify-center items-center space-y-3 border-2 border-solid border-transparent p-9 md:w-[422px] rounded-xl bg-white">
+                    <h1 class="text-2xl font-bold text-red-600">Error!</h1>
+                    <p id="errorMessage3" class="text-xl text-red-500"></p>
+                    <div class="modal-action">
+                      <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn btn-xs sm:btn-sm md:btn-md bg-gray-200 font-semibold">Close</button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- section - 3 endss from here -->
+
+    </section>
+
+      <!-- history -->
+      <section id="historySection" class="mt-20 lg:w-[1200px] mx-3 lg:mx-auto mb-20 hidden">
+        <div id="historyTab">
+  
+        </div>
+  
+  
+  
+    </section>
+    </section>
+
+    <!-- Body Section ends from here -->
+
+  </main>
+  <footer class="bg-[#F9F7F3] p-20">
+
+  </footer>
+
+  <script src="script/utilities.js"></script>
+  <script src="script/donate.js"></script>
+
+</body>
+
+</html>
